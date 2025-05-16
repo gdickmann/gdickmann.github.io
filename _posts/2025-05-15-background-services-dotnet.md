@@ -29,6 +29,7 @@ Entender o motivo desse problema te força a entender um pouco mais sobre assinc
 _Na ciência da computação, a thread é a menor sequência de instruções programadas que podem ser gerenciadas independentemente por um scheduler, que normalmente faz parte do sistema operacional._
 
 ![alt text](/images/2025-05-15-background-services-dotnet/thread.png)
+
 _Fonte: Wikipedia_
 
 Ou seja, dentro de cada thread há um fluxo de código que você define. Tudo o que roda por um programa de computador é executado por pelo menos uma thread (e várias delas podem ser executadas ao mesmo tempo).
