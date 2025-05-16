@@ -2,7 +2,9 @@
 
 Recentemente precisei escrever um algoritmo onde uma classe herdada de `BackgroundService` - classe abstrata que implementa `IHostedService`, a interface que roda fluxos em segundo plano - rodava infinitamente. A regra de negócio era executada apenas 1 vez no mês, mas mesmo assim você precisa de uma thread para verificar se essa _é a vez do mês_.
 
-`class MyCustomWorker : BackgroundService
+`
+
+class MyCustomWorker : BackgroundService
 {
     private const int RunAt = 1;
 
@@ -16,7 +18,9 @@ Recentemente precisei escrever um algoritmo onde uma classe herdada de `Backgrou
             }
         }
     }
-}`
+}
+
+`
 
 Quando esse worker é injetado com `AddHostedService<T>`, qualquer outro worker injetado também com `AddHostedService<T>` não será mais executado - e isso se deve pela forma em que o runtime do .NET gerencia a inicialização desses workers.
 
